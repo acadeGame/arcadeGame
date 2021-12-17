@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Bellefair|Comfortaa|Satisfy|Slabo+27px|Vidaloka');
+
+:root {
+	--color-black: #141414;
+	--color-dark-gray: #1c1d1fef;
+	--color-blue:#032142;
+	--color-light-blue:#00285b;
+	--color-dark-blue:#001028;
+	--color-gray: #485460;
+	--color-yellow: #FFCD2B;
+
+}
+body {
+	background-color: var(--color-dark-gray);
+	max-width: 100vw;
+	min-width: 1020px;
+	max-height: 100vh;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.machine-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+
+/* 게임기 상단의 게임 선택 부분 */
+.machine-container .top {
+	background-color: var(--color-blue);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	width: 70%;
+}
+.machine-container .top .game-list {
+	margin: 10px auto;
+	padding: 10px;
+	background-color: var(--color-yellow);
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 5px 10px rgba(27, 25, 12, 0.76) inset, 0px -1px 10px #3b3001e3 inset;
+	border-radius: 8px;
+}
+.machine-container .top .game-list .game-menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.machine-container .top .game-list .game-btn{
+	flex-basis: 1;
+	margin: 5px 30px;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--color-black);
+	width: 80px;
+	min-width: 80px;
+	height: 100px;
+	color: white;
+	transition: .6s;
+	display: flex;
+	align-items: center;
+}
+.machine-container .top .game-list .game-btn img{
+	width: 100%;
+}
+.machine-container .top .game-list .game-btn:hover{
+	box-shadow: 4px 4px 10px #3b3001e3;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.machine-container .top .game-list .game-title{
+	width: 0px;
+	overflow: hidden;
+	font-weight: bold;
+	color: var(--color-black);
+	transition: .8s;
+}
+
+/* 게임 선택 부분 밑 이어지는 부분 */
+.machine-container .top-body-container {
+	width: 68.7%;
+	height: 45px;
+	perspective: 200px;
+	position: relative;
+
+}
+.machine-container .top-body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background-color: var(--color-dark-blue);
+	transform:  rotateX(-10deg);
+}
+
+/* 게임 플레이 몸통 및 화면 부분 */
+.machine-container .play-container {
+	box-shadow: 0px 6px 8px -2px var(--color-dark-blue) inset, 0px -3px 8px -2px var(--color-dark-blue) inset;
+	margin-top: -2px;
+	width: 67.4%;
+	height: 59vh;
+	background-color: var(--color-light-blue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.machine-container .play-container .speaker {
+	/* background-image: url(../img/speaker.png); */
+	width: 9vw;
+	height: 16vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 6px;
+}
+.machine-container .play-container .box {
+	display: none;
+	background-color: var(--color-black);
+	width: 70%;
+	height: 90%;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+	rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+	rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.machine-container .play-container iframe {
+	width: 100%;
+	height: 100%;
+}
+.machine-container .play-container .play-game {
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+	rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+	rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	background-color: var(--color-gray);
+	width: 70%;
+	height: 90%;
+	margin: 5em auto;
+	overflow: hidden;
+	position: relative;
+}
+
+/*게임 시작 전 화면에 뜨는 사진*/
+.play-game img {
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s ease-out;
+	position: relative;
+	z-index: 2;
+}
+.play-game:hover img {
+	transform: scale(1.1, 1.1);
+}
+/* 게임 시작 전 화면에 뜨는 문구 및 오버레이 */
+.box-text_ {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	padding: 10px;
+  background-image: linear-gradient( 135deg, rgba(129, 255, 238, 0.377) 10%, rgba(240, 103, 181, 0.473) 100%);
+	opacity: 1;
+	transition: 0.3s linear;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #333;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box-text_ h1 {
+	font-size: 2.2em;
+	font-family: 'Bellefair', serif;
+  font-family: 'Comfortaa', cursive;
+}
+.box-text_ p {font-size: 1.5em;}
+
+/* 게임 화면 밑 이어지는 부분*/
+.machine-container .game-body-container {
+	position: relative;
+	width: 68.9%;
+	height: 50px;
+	perspective: 200px;
+}
+.machine-container .game-body {
+	box-shadow: 0px 6px 8px -2px rgba(9, 10, 19, 0.918) inset;
+	position: absolute;
+	margin-top: -2px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-dark-blue);
+	transform: rotateX(10deg);
+}
+
+
+/* 게임 패드 부분**/
+.machine-container .gamepad-container {
+	position: relative;
+	width: 80%;
+	height: 110px;
+	perspective: 200px;
+}
+.machine-container .gamepad {
+	box-shadow: 0px 8px 8px -2px var(--color-dark-blue) inset;
+	margin-top: -19px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-blue);
+	transform: rotateX(30deg);
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* 조이스틱 겹치는 부분 */
+.machine-container .gamepad .joystick {
+	background-image: url('../img/joystick_.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transform: rotateX(-30deg) translateY(-50px) ;
+	width: 100px;
+	height: 140px;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+.machine-container .gamepad-container .joystick-shadow {
+  background-color:#1f1305;
+	transform: rotateX(-30deg) translateY(-58px);
+  content:"";
+  position: absolute;
+	z-index: -1;
+	width: 57px;
+	height: 15px;
+  bottom: -41px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.machine-container .gamepad .joystick1 {
+	left: 20%;
+}
+.machine-container .gamepad .joystick2 {
+	right: 38%;
+}
+
+.machine-container .gamepad-container .joystick-shadow1 {
+	left: 26.5%;
+}
+.machine-container .gamepad-container .joystick-shadow2 {
+	right: 41.1%;
+}
+/* 조이스틱 버튼 겹치는 부분*/
+.gamepad .btn {
+	position: relative;
+	perspective: 200px;
+}
+.gamepad .joy-btn{
+  position:absolute;
+  display:inline-block;
+	width: 8%;
+}
+.gamepad .joy-btn .joy-btn-inner{
+  position:absolute;
+	height: 35px;
+  transition: all .1s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.gamepad .joy-btn .joy-btn-inner:active{
+  top:10px;
+  transition: all .1s ease;
+}
+.gamepad .joy-btn:after{
+  content:"";
+  position: absolute;
+  left:-5px;
+  z-index:-1;
+	height: 45px;
+  bottom:-55px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* 버튼 색상 설정 */
+/* 버튼 안쪽 색상 */
+.gamepad .joy-btn .joy-btn-inner1{
+  background-color:#F9F204;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  filter: dropshadow(color=#000, offx= 0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #d4910b;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #d4910b;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #d4910b;
+}
+.gamepad .joy-btn .joy-btn-inner2{
+  background-color:#f73e30;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  filter: dropshadow(color=#000, offx= 0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #9E2314;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #9E2314;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #9E2314;
+}
+.gamepad .joy-btn .joy-btn-inner3{
+  background-color:#40B446;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  filter: dropshadow(color=#000, offx= 0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #1C7C39;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #1C7C39;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #1C7C39;
+}
+
+/* 버튼 안쪽 그림자 색상 */
+.gamepad .joy-btn .joy-btn-inner1:active, 
+.gamepad .joy-btn .joy-btn-inner1.active{
+	background-color:#fdb31f;
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+ 	box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+.gamepad .joy-btn .joy-btn-inner2:active, 
+.gamepad .joy-btn .joy-btn-inner2.active{
+	background-color:#bd2e23;
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #631210;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #631210;
+ 	box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #631210;
+}
+.gamepad .joy-btn .joy-btn-inner3:active, 
+.gamepad .joy-btn .joy-btn-inner3.active{
+	background-color:#15973c;
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #155f2b;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #155f2b;
+ 	box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #155f2b;
+}
+/* 버튼 그림자 색상 */
+.gamepad .joy-btn1:after{
+  background-color:#1f1305;
+}
+.gamepad .joy-btn2:after{
+  background-color:#1f1305;
+}
+.gamepad .joy-btn3:after{
+  background-color:#1f1305;
+}
+
+
+/* 왼쪽 조이스틱 버튼 그룹 */
+.joystick-btn-group .joy-btn1{
+	transform: rotateX(-30deg) translateX(90px) translateY(15px) skewX(-8deg);
+	left: 30%;
+}
+.joystick-btn-group .joy-btn2{
+	transform: rotateX(-30deg) translateX(90px) translateY(80px) skewX(-11deg);
+	left: 23%;
+}
+.joystick-btn-group .joy-btn3{
+	transform: rotateX(-30deg) translateX(90px) translateY(80px) skewX(-5deg);
+	left: 36%;
+}
+
+.gamepad .joy-btn .joy-btn-inner1{
+	width: 63px;
+}
+.gamepad .joy-btn .joy-btn-inner2,
+.gamepad .joy-btn .joy-btn-inner3 {
+	width: 66px;
+}
+
+.gamepad .joy-btn1:after{
+  width: 74px;
+}
+.gamepad .joy-btn2:after,
+.gamepad .joy-btn3:after{
+  width: 77px;
+}
+/* 오른쪽 조이스틱 버튼 그룹 */
+
+.joystick-btn-group2 .joy-btn1{
+	transform: rotateX(-30deg) translateX(90px) translateY(15px) skewX(15deg);
+	right: 20%;
+}
+.joystick-btn-group2 .joy-btn2{
+	transform: rotateX(-30deg) translateX(90px) translateY(80px) skewX(13deg);
+	right: 25%;
+}
+.joystick-btn-group2 .joy-btn3{
+	transform: rotateX(-30deg) translateX(90px) translateY(80px) skewX(18deg);
+	right: 12%;
+}
+
+/* 게임기 제일 아랫부분 */
+.machine-container .bottom {
+	margin-top: -22px;
+	width: 92.7%;
+	height: 30px;
+	background-color: var(--color-dark-blue);
+}
