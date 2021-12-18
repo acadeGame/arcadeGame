@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/matching.css">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link href="https://fonts.googleapis.com/css2?&family=Press+Start+2P&family=Orbitron:wght@400;900&family=Material+Icons&display=swap" rel="stylesheet">
+    <title>그림맞추기</title>
+</head>
+<body>
+    <div class="game-box">
+        <div class="pop_bg pop_colse">
+            <div class="pop">
+                <h3>GAME OVER</h3>
+                <p class="total_score">MY SCORE: <span>0</span></p>
+                <button id="retryBtn">RETRY</button>
+            </div>
+        </div>
+        <div class="game_container">
+            <ul class="score_container">
+                <li class="score">SCORE: <span></span></li>
+                <li class="time"></li>
+                <li class="life">          
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                    <span>♥</span> 
+                </li>
+            </ul>
+            <div class="show_container"></div>
+        </div>
+    </div> 
+<script src="./src/matching.js"></script>
+</body>
+</html>
