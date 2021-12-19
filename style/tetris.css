@@ -1,0 +1,96 @@
+#gameBox {
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+    color: #fff;
+}
+/* #gameBox  */
+#gameContainer{
+    width: 750px;
+    height: 495px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+
+}
+/* #gameContainer */
+
+#gameShow{
+    width: 400px;
+    height: 100%;
+    border: 1px solid #666;
+}
+/* #gameShow */
+
+#socreBox{
+    width: 50%;
+}
+#socreBox .next_block{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+}
+/* #socreBox */
+
+#myScore{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#myScore>li{
+    width: 100%;
+}
+#myScore li span{
+    display: block;
+}
+.info_txt{
+    margin-top: 20px;
+}
+/* #myScore */
+
+#keyBox{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#keyBox li{
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #111;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #333, #222);
+    overflow: hidden;
+    box-shadow:inset -2px -2px 5px rgba(0,0,0,0.3), 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+#keyBox li::before{
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(-90deg, #353535 20%, #252525 80%);
+    border-left: 3px solid #222;
+    border-top: 1px solid #222;
+    border-bottom: 2px solid #353535;
+    border-right: 1px solid #222;
+    box-shadow:  -20px -20px 20px rgba(255,255,255,0.2);
+}
+
+#keyBox li:last-child{
+    width: 310px;
+}
+
+#keyBox li:last-child::before{
+    width: 290px;
+}
+
+/* keyBox */

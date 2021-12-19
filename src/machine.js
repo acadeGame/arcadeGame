@@ -31,7 +31,7 @@ const playGameSrc = [ // 게임 페이지 html 파일 연결
 	't_rex_jump.html',
 	'#',
 	'#',
-	'#',
+	'matching.html',
 	'#'
 ];
 

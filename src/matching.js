@@ -2,6 +2,7 @@ const color_arr=["color1","color2","color3","color4","color5","color6","color7",
 
 let show_container = document.querySelector(".game-box .game_container .show_container");
 let pop_bg = document.querySelector(".game-box .pop_bg");
+let success_pop = document.querySelector(".game-box .success_pop");
 let total_score = document.querySelector(".game-box .pop_bg .total_score>span");
 
 let score_txt = document.querySelector(".score_container .score>span");
@@ -40,14 +41,16 @@ let timeMove;
 const timeSetting =function(){
     timeMove = setInterval(function(){
         --time_num;
-        if(time_num <= 0){//Time Out >> Game Over
+        time_txt.innerText =time_num;
+        if(time_num == 0){//Time Out >> Game Over
             clearInterval(timeMove);
             click_state=false;
-            pop_bg.classList.remove("pop_colse");
+            pop_bg.classList.remove("pop_close");
             total_score.innerText=score_num;
-        }else{
-            time_txt.innerText =time_num;
         }
+        // else{
+        //     time_txt.innerText =time_num;
+        // }
     }, 1000);   
 }//Time move setting
 
@@ -83,11 +86,11 @@ const clickSetting = function(){
         for (let i = 0; i < card_arr.length; i++){//show card back
             card_arr[i].classList.remove("active");
         }
-    },2500)
+    },3000)
     //동기화    
     window.setTimeout(()=>{//delay 2.5s => time sart
         timeSetting();
-    }, 2500)
+    }, 3000)
 
     for(let itme of card_arr){
         itme.onclick = function(){
@@ -112,8 +115,9 @@ const clickSetting = function(){
 
                         if(sussecc_card==9){//이긴경우 게임 계속
                             clearInterval(timeMove);
-                            gameSetting(score_num,time_txt.innerText,life_num);
-                            clickSetting();  
+                            success_pop.classList.remove("pop_close");
+                            // gameSetting(score_num,time_txt.innerText,life_num);
+                            // clickSetting();  
                         }    
                     }else{//diffrence card
                         life_arr[life_num].classList.add("off"); //life -1
@@ -124,10 +128,10 @@ const clickSetting = function(){
                             click_arr[0].classList.remove("active");
                             click_arr[1].classList.remove("active");
     
-                            if(life_num==10){//life 0 >> Game Over
+                            if(life_num==7){//life 0 >> Game Over
                                 clearInterval(timeMove);
                                 click_state=false; 
-                                pop_bg.classList.remove("pop_colse");
+                                pop_bg.classList.remove("pop_close");
                                 total_score.innerText=score_num;                            
                             }else{
                                 click_arr.splice(0,2);
@@ -144,10 +148,16 @@ const clickSetting = function(){
 }// card click
 
 retryBtn.onclick=function() {
-    pop_bg.classList.add("pop_colse");
+    pop_bg.classList.add("pop_close");
     gameSetting(0,30,0);
     clickSetting();
 }//retry
+
+continueBtn.onclick=function(){
+    success_pop.classList.add("pop_close");
+    gameSetting(score_num,time_txt.innerText,life_num);
+    clickSetting();  
+}
 
 gameSetting(0,30,0);
 clickSetting();
