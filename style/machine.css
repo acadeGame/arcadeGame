@@ -131,6 +131,7 @@ body {
 .machine-container .play-container iframe {
 	width: 100%;
 	height: 100%;
+	border-radius: 5px;
 }
 .machine-container .play-container .play-game {
 	border-radius: 5px;
