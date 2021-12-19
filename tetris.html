@@ -9,11 +9,27 @@
     <title>TETRIS</title>
 </head>
 <body>
-    <div id="gameContainer">
-        <div id="gameShow">
-            <canvas id="gameCanvas"></canvas>
+    <div id="gameBox">
+        <div id="gameContainer">
+            <div id="gameShow">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+            <div id="socreBox">
+                <div class="next_block"></div>
+                <ul id="myScore">
+                    <li class="score">score: <span>0000</span></li>
+                    <li class="lines">lines: <span>00</span></li>
+                    <li class="level">level: <span>00</span></li>
+                </ul>
+                <ul id="keyBox">
+                    <li>left</li>
+                    <li>down</li>
+                    <li>right</li>
+                    <li>z</li>
+                    <li>space</li>
+                </ul>
+            </div>
         </div>
-        <div id="socreBox"></div>
     </div>
 <script src="./src/tetris.js"></script>
 </body>
