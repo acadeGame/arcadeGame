@@ -10,23 +10,25 @@
 /* #gameBox  */
 #gameContainer{
     width: 750px;
-    height: 495px;
+    height: 500px;
     border: 1px solid #000;
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
 
 }
 /* #gameContainer */
 
 #gameShow{
     width: 400px;
-    height: 100%;
-    border: 1px solid #666;
+    height: 500px;
+    /* border: 1px solid #666; */
+    /* box-sizing: border-box; */
 }
 /* #gameShow */
 
 #socreBox{
-    width: 50%;
+    width: 44%;
 }
 #socreBox .next_block{
     width: 150px;
@@ -63,6 +65,7 @@
     height: 70px;
     margin: 5px;
     padding: 5px;
+    position: relative;
     border: 2px solid #111;
     box-sizing: border-box;
     border-radius: 10px;
@@ -85,12 +88,13 @@
     box-shadow:  -20px -20px 20px rgba(255,255,255,0.2);
 }
 
-#keyBox li:last-child{
-    width: 310px;
-}
+#keyBox li:last-child{ width: 310px; }
+#keyBox li:last-child::before{ width: 290px; }
 
-#keyBox li:last-child::before{
-    width: 290px;
+#keyBox li em{
+    display: block;
+    position: absolute;
+    left: 10px; top: 10px;
 }
 
 /* keyBox */
