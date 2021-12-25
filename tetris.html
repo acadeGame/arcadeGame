@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/tetris.css">
     <link rel="stylesheet" href="./style/reset.css">
+    <link href="https://fonts.googleapis.com/css2?&family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <title>TETRIS</title>
 </head>
 <body>
     <div id="gameBox">
         <div id="gameContainer">
             <div id="gameShow">
+                <div id="stopPop" class="pop-close">
+                    <h3>STOP</h3>
+                    <p>PUSH <span>ESC</span><br>TO CONTINUE</p>
+                </div>
                 <canvas id="tetrisCanvas"></canvas>
             </div>
             <div id="socreBox">
@@ -22,11 +27,11 @@
                     <li class="level">level: <span>00</span></li>
                 </ul>
                 <ul id="keyBox">
-                    <li><em>left</em></li>
-                    <li><em>down</em></li>
-                    <li><em>right</em></li>
-                    <li><em>z</em></li>
-                    <li><em>space</em></li>
+                    <li id="keyLeft"><em>◀</em></li>
+                    <li id="keyDown"><em>▼</em></li>
+                    <li id="keyRight"><em>▶</em></li>
+                    <li id="keyEscape"><em>ESC</em></li>
+                    <li id="keySpace"><em>space</em></li>
                 </ul>
             </div>
         </div>
