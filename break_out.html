@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/break_out.css">
+	<link rel="shortcut icon" href="#">
+	<script src="src/break_out.js" defer></script>
+</head>
+<body>
+	<div class="game-box">
+		<canvas id="playGame"></canvas>
+	</div>
+	<div class="show-score displayNone">
+		<h1>YOU WIN</h1>
+		<h2>Score: <span id="score1">0</span></h2>
+		<h2 class="life">LIFE + 1</h2>
+		<div class="next-btn">CLICK THE NEXT LEVEL PLAY</div>
+	</div>
+	<div class="game-over displayNone">
+		<h1>GAME OVER</h1>
+		<h2>Score: <span id="score2">0</span></h2>
+		<div class="restart">Space to Restart</div>
+	</div>
+</body>
+</html>

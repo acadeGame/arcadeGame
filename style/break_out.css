@@ -1,0 +1,107 @@
+body{
+	background-color: #08010c;
+	overflow: hidden;
+}
+.game-box {
+	position: relative;
+	width: 100vw; 
+	height: 100vh; 
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#playGame {
+	border-radius: 6px;
+	background-color: #7f5a83;
+	background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
+.displayNone {
+	display: none;
+}
+.displayFlex {
+	display: flex;
+}
+
+.show-score,
+.game-over {
+	width: 100vw; 
+	height: 100vh; 
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  color: #fff;
+}
+.show-score h1,
+.game-over h1 {
+	font-size: 4.2rem;    
+}
+.show-score h2,
+.game-over h2 {
+	font-size: 1.8rem;
+}
+.show-score h1,
+.show-score h2 {
+	animation: flicker 2s infinite alternate;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.show-score .life {
+	margin-top: 5vh;
+}
+.game-over h1,
+.game-over h2 {
+	animation: flicker_ 2s infinite alternate;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.show-score .next-btn,
+.game-over .restart {
+	margin-top: 12vh;
+	font-size: 1.3em;
+	padding: 1em;
+}
+.show-score .next-btn:hover{
+	cursor: pointer;
+	animation: flicker 1.8s infinite alternate;
+}
+.game-over .restart{
+	text-shadow:		
+	0 0 11px #fff,
+	0 0 40px #7B68EE,
+	0 0 90px #7B68EE;
+}
+
+/* 깜빡거리는 애니메이션*/
+@keyframes flicker {
+	0%, 18%, 22%, 25%, 53%, 57%, 100% {
+		text-shadow:
+		0 0 4px #fff,
+		0 0 11px #fff,
+		0 0 19px #fff,
+		0 0 40px #0fa,
+		0 0 80px #0fa,
+		0 0 90px #0fa,
+		0 0 100px #0fa,
+		0 0 150px #0fa;
+  }
+  20%, 24%, 55% {        
+		text-shadow: none;
+  }    
+}
+@keyframes flicker_ {
+	0%, 18%, 22%, 25%, 53%, 57%, 100% {
+		text-shadow:
+		0 0 4px #fff,
+		0 0 11px #fff,
+		0 0 19px #fff,
+		0 0 40px #7B68EE,
+		0 0 80px #7B68EE,
+		0 0 90px #7B68EE,
+		0 0 100px #7B68EE,
+		0 0 150px #7B68EE;
+  }
+  20%, 24%, 55% {        
+		text-shadow: none;
+  }    
+}

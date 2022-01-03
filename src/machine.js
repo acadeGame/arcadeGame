@@ -20,16 +20,16 @@ class PlayAllSrc {
 const playGifSrc = [ // 게임 선택 전 미리 보기 gif 파일, 추후 변경 가능
 	'https://i.giphy.com/media/9xyL3Ogw3wlafmKowH/giphy.webp',
 	'https://user-images.githubusercontent.com/62978690/83346763-0a579300-a33f-11ea-8ad3-db58cadbca81.gif',
-	'https://i.giphy.com/media/13eirb4In7z4is/giphy.webp',
+	'https://post-phinf.pstatic.net/MjAxNzA4MjhfMjMz/MDAxNTAzOTI5MDM0OTE4.uoyWe8k_pw8xciI8YNhiRj1acyqMFlOiTJEhvRVZydQg.ppoq4wcL6DvY9WaP_KOXZaDd9im_NLaB2S0B0UYwmPMg.GIF/ImpureGivingIcelandicsheepdog-max-1mb.gif?type=w1200',
 	'https://www.riskbasedsecurity.com/wp-content/uploads/2020/03/Mole-GIF.gif',
 	'https://media2.giphy.com/media/uPrD0MVGVhu0v0jdwa/giphy.gif?cid=ecf05e475zr5ekh5xosgo5owtmm1v8o4y65g14rdjzvqde7g&rid=giphy.gif&ct=g',
-	'https://media2.giphy.com/media/uPrD0MVGVhu0v0jdwa/giphy.gif?cid=ecf05e475zr5ekh5xosgo5owtmm1v8o4y65g14rdjzvqde7g&rid=giphy.gif&ct=g'
+	'https://i.giphy.com/media/13eirb4In7z4is/giphy.webp',
 ];
 
 const playGameSrc = [ // 게임 페이지 html 파일 연결
 	'#',
 	't_rex_jump.html',
-	'#',
+	'break_out.html',
 	'#',
 	'matching.html',
 	'#'
