@@ -1,41 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/shooting.css">
-    <link href="https://fonts.googleapis.com/css2?&family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/shooting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?&family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>shooting game</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="gameBox">
-        <div id="gameContainer">
-            <div id="canvasWrap">
-                <canvas id="gameCanvas"></canvas>
-            </div>
-            <div class="score-container">
-                <ul class="myScore">
-                    <li>score:<span id="score">0</span></li>
-                    <li>life
-                        <p id="life">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </p>
-                    </li>
-                    <li>level:<span id="level">1</span></li>
-                </ul>
-                <ul id="keyBox">
-                    <li id="keyUp" ><em>▲</em></li>
-                    <li id="keyLeft"><em>◀</em></li>
-                    <li id="keyDown"><em>▼</em></li>
-                    <li id="keyRight"><em>▶</em></li>
-                    <li id="keySpace"><em>space</em></li>
-                </ul>
-            </div>
+      <audio loop preload="auto" id="bgMusic">
+        <source src="./sound/shooting/bgm.mp3" type="audio/mp3" />
+      </audio>
+      <audio preload="auto" id="damageMusic">
+        <source src="./sound/shooting/damage.mp3" type="audio/mp3" />
+      </audio>
+      <audio preload="auto" id="bimMusic">
+        <source src="./sound/shooting/bim.mp3" type="audio/mp3" />
+      </audio>
+      <div id="gameContainer">
+        <div id="canvasWrap">
+          <div id="gameOverPage" class="page close_page">
+            <h3>GAME<br />OVER</h3>
+            <p>PLAY AGAIN?</p>
+            <p>
+              <button type="button" id="yesBtn" class="page_btn">YES</button
+              ><button type="button" id="noBtn" class="page_btn">NO</button>
+            </p>
+          </div>
+          <div id="startPage" class="page">
+            <h3>SHOOTING<br />PANGPANG</h3>
+            <ul>
+              <li>PLEASE <em>SOUND ON</em></li>
+              <li>move:▼ ▲ ◀ ▶</li>
+              <li>shoot bim: space bar</li>
+              <p>
+                <button type="button" id="startBtn" class="page_btn">
+                  TO START CLICK ME!
+                </button>
+              </p>
+            </ul>
+          </div>
+          <canvas id="gameCanvas"></canvas>
         </div>
+        <div class="score-container">
+          <ul class="myScore">
+            <li>score:<span id="score">0</span></li>
+            <li>
+              life
+              <p id="life">
+                <span></span><span></span><span></span><span></span
+                ><span></span>
+              </p>
+            </li>
+            <li>level:<span id="level">1</span></li>
+          </ul>
+          <ul id="keyBox">
+            <li id="keyUp"><em>▲</em></li>
+            <li id="keyLeft"><em>◀</em></li>
+            <li id="keyDown"><em>▼</em></li>
+            <li id="keyRight"><em>▶</em></li>
+            <li id="keySpace"><em>space</em></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-<script src="./src/shooting.js"></script>
-</body>
+    <script src="./src/shooting.js"></script>
+  </body>
 </html>

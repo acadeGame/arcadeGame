@@ -1,128 +1,222 @@
 #gameBox {
-    width: 100vw;  height: 100vh; 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    background-color: #252525;
-    color: #fff;
-    /* font-family: 'Orbitron', sans-serif; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252525;
+  color: #fff;
+  /* font-family: 'Orbitron', sans-serif; */
 }
 
-#gameContainer{
-    width: 750px;  height: 500px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
+#gameContainer {
+  width: 750px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 /* #gameBox #gameContainer */
 
-#canvasWrap{
-    width: 500px;  height: 500px;
-    background-size: 100px 100px;
-    background-image: url(../img/shooting_bg.jpg);
-    animation: bg-move .7s linear infinite;
+#canvasWrap {
+  width: 500px;
+  height: 500px;
+  background-size: 100px 100px;
+  background-image: url(../img/shooting_bg.jpg);
+  animation: bg-move 0.7s linear infinite;
+  position: relative;
 }
 
 @keyframes bg-move {
-    from{background-position:0 100px;}
-    to{background-position: 0px;}
+  from {
+    background-position: 0 100px;
+  }
+  to {
+    background-position: 0px;
+  }
+}
+#gameCanvas {
+  width: 500px;
+  height: 500px;
 }
 
-#gameCanvas{
-    width: 500px;  height: 500px;
-}
 /* #gameShow */
-.score-container{
-    width: 250px; height: 500px;
-    /* padding-left: 10px; */
-    box-sizing: border-box;
-    background-color: #12191f;
+.close_page {
+  display: none;
 }
 
-.myScore{ 
-    width: 100%; 
-    margin-top: 40px; padding-left: 5px;
-    box-sizing: border-box;
-}
-.myScore>li{ 
-    width: 100%; padding-bottom: 20px;
-    font-size: 18px;
-    font-family: 'Press Start 2P', cursive;
-}
-#life{padding-top: 10px;}
-#life span{
-    width: 25px; height: 22px;
-    padding-right: 10px;
-    display: inline-block;
-    background:url(../img/heart_on.png) 0 0 no-repeat;
-    /* background-size: cover; */
+.page {
+  width: 500px;
+  height: 500px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
+#startPage {
+  background-size: 100px 100px;
+  background-image: url(../img/shooting_bg.jpg);
+  padding-top: 105px;
+}
+.page h3 {
+  width: 100%;
+  font-size: 50px;
+  background: linear-gradient(to bottom, yellow, rgb(255, 136, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 25px;
+  line-height: 1.2;
+}
+#startPage ul li {
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+#startPage ul li em {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+}
+#startPage p {
+  margin-top: 30px;
+}
+.page_btn {
+  border: 0;
+  background-color: transparent;
+  font-family: "Press Start 2P", cursive;
+  color: #fff;
+  font-size: 20px;
+}
+.page_btn:hover {
+  color: yellow;
+}
+
+/* #startPage */
+#gameOverPage {
+  padding-top: 115px;
+  background-color: #12191f85;
+}
+#gameOverPage h3 {
+  font-size: 70px;
+}
+
+#gameOverPage p {
+  width: 100%;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+#gameOverPage p button {
+  width: 120px;
+  height: 40px;
+}
+/* #gameOverPage */
+.score-container {
+  width: 250px;
+  height: 500px;
+  box-sizing: border-box;
+  background-color: #12191f;
+}
+
+.myScore {
+  width: 100%;
+  margin-top: 40px;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.myScore > li {
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-family: "Press Start 2P", cursive;
+}
+#life {
+  padding-top: 10px;
+}
+#life span {
+  width: 25px;
+  height: 22px;
+  padding-right: 10px;
+  display: inline-block;
+  background: url(../img/heart_on.png) 0 0 no-repeat;
+  filter: grayscale(0);
+}
+#life span.off {
+  filter: grayscale(1);
+}
 
 /* #myScore */
 
-#keyBox{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
+#keyBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
-#keyBox li{
-    width: 70px;
-    height: 70px;
-    margin: 5px;
-    padding: 5px;
-    position: relative;
-    border: 2px solid #111;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #333, #222);
-    overflow: hidden;
-    box-shadow:inset -2px -2px 5px rgba(0,0,0,0.3), 5px 5px 10px rgba(0,0,0,0.3);
+#keyBox li {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  border: 2px solid #111;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #333, #222);
+  overflow: hidden;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+    5px 5px 10px rgba(0, 0, 0, 0.3);
 }
-#keyBox li:first-child{margin:5px 85px;}
-#keyBox li:last-child{ width: 230px; }
-#keyBox li:last-child::before{ width: 212px; }
-
-#keyBox li::before{
-    content: '';
-    display: inline-block;
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
-    background: linear-gradient(-90deg, #353535 20%, #252525 80%);
-    border-left: 3px solid #222;
-    border-top: 1px solid #222;
-    border-bottom: 2px solid #353535;
-    border-right: 1px solid #222;
-    box-shadow:  -20px -20px 20px rgba(255,255,255,0.2);
+#keyBox li:first-child {
+  margin: 5px 85px;
+}
+#keyBox li:last-child {
+  width: 230px;
+}
+#keyBox li:last-child::before {
+  width: 212px;
 }
 
-#keyBox li em{
-    display: block;
-    position: absolute;
-    left: 10px; top: 10px;
-    font-size: 16px;
-    font-weight:400;
-    font-family: 'Orbitron', sans-serif;
+#keyBox li::before {
+  content: "";
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(-90deg, #353535 20%, #252525 80%);
+  border-left: 3px solid #222;
+  border-top: 1px solid #222;
+  border-bottom: 2px solid #353535;
+  border-right: 1px solid #222;
+  box-shadow: -20px -20px 20px rgba(255, 255, 255, 0.2);
 }
 
-#keyBox .key-down{
-    /* border-color: gold; */
-    background: linear-gradient(90deg, #252525, #151515);
-    box-shadow:inset -2px -2px 5px rgba(0,0,0,0.3), 5px 5px 10px rgba(0,0,0,0.3);
+#keyBox li em {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Orbitron", sans-serif;
 }
 
-#keyBox .key-down::before{
-    background: linear-gradient(-90deg, #222 20%, #151515 80%);
-    border-left: 3px solid #151515;
-    border-top: 1px solid #151515;
-    border-bottom: 2px solid #252525;
-    border-right: 1px solid #151515;
-    box-shadow:  -20px -20px 20px rgba(100,100,100,0.2);
+#keyBox .key-down {
+  /* border-color: gold; */
+  background: linear-gradient(90deg, #252525, #151515);
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+    5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+#keyBox .key-down::before {
+  background: linear-gradient(-90deg, #222 20%, #151515 80%);
+  border-left: 3px solid #151515;
+  border-top: 1px solid #151515;
+  border-bottom: 2px solid #252525;
+  border-right: 1px solid #151515;
+  box-shadow: -20px -20px 20px rgba(100, 100, 100, 0.2);
+}
 
 /* keyBox */
-
