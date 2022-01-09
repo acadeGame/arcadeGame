@@ -4,14 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #252525;
+  background-color: #12191f;
   color: #fff;
   /* font-family: 'Orbitron', sans-serif; */
 }
 
 #gameContainer {
   width: 750px;
-  height: 500px;
+  height: 498px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -20,7 +20,7 @@
 
 #canvasWrap {
   width: 500px;
-  height: 500px;
+  height: 498px;
   background-size: 100px 100px;
   background-image: url(../img/shooting_bg.jpg);
   animation: bg-move 0.7s linear infinite;
@@ -37,7 +37,7 @@
 }
 #gameCanvas {
   width: 500px;
-  height: 500px;
+  height: 498px;
 }
 
 /* #gameShow */
@@ -47,7 +47,7 @@
 
 .page {
   width: 500px;
-  height: 500px;
+  height: 498px;
   font-family: "Press Start 2P", cursive;
   text-align: center;
   box-sizing: border-box;
@@ -59,11 +59,11 @@
 #startPage {
   background-size: 100px 100px;
   background-image: url(../img/shooting_bg.jpg);
-  padding-top: 105px;
+  padding-top: 85px;
 }
 .page h3 {
   width: 100%;
-  font-size: 50px;
+  font-size: 52px;
   background: linear-gradient(to bottom, yellow, rgb(255, 136, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -80,7 +80,7 @@
   padding-bottom: 2px;
 }
 #startPage p {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .page_btn {
   border: 0;
@@ -114,7 +114,7 @@
 /* #gameOverPage */
 .score-container {
   width: 250px;
-  height: 500px;
+  height: 498px;
   box-sizing: border-box;
   background-color: #12191f;
 }

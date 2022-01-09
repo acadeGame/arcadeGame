@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 ctx.canvas.width = 500;
-ctx.canvas.height = 500;
+ctx.canvas.height = 498;
 
 let levelNum = 1;
 let scoreNum = 0;
