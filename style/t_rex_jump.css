@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 :root {
-	--background-color: rgb(248, 235, 240);
+	--background-color: rgb(255, 242, 247);
 	--background-gray: rgb(41, 41, 41);
 }
 body{
 	background-color: var(--background-color);
+	overflow: hidden;
 }
 .game-character-selector-container {
 	display: flex;
@@ -14,7 +15,7 @@ body{
 }
 .game-character-selector-container .selector-title {
 	font-family: 'Fredoka One', cursive;
-	font-size: 30px;
+	font-size: 32px;
 	color: #648ebe;
 	margin-top: 15%;
 }
@@ -53,7 +54,7 @@ body{
 }
 .selector-btn button{
 	margin: 20px 0 0;
-	font-size: 16px;
+	font-size: 18px;
 	background-color: var(--background-color);
 	border: none;
 	cursor: pointer;
@@ -85,7 +86,8 @@ body{
 .bgm-toggle {
 	background-color: var(--background-color);
 	align-self: flex-end;
-	margin-right: 10%;
+	margin-top: 10%;
+	margin-right: 12%;
 	border: none;
 	cursor: pointer;
 	font-family: 'Fredoka One', cursive;
@@ -94,9 +96,9 @@ body{
 .score {
 	font-family: 'Fredoka One', cursive;
 	align-self: flex-end;
-	margin-right: 10%;
+	margin-right: 12%;
 	margin-top: 1%;
-	font-size: 20px;
+	font-size: 21px;
 	color: #535353;
 }
 #score.bounce {

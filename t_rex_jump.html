@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/t_rex_jump.css">
+	<link rel="shortcut icon" href="#">
+	<script src="src/t_rex_jump.js" defer></script>
+</head>
+<body>
+	<div class="game-character-selector-container">
+		<div class="selector-title">CHARACTER CHOOSE</h2></div>
+		<div class="game-character-selector">
+				<div class="selector-btn">
+					<div class="simg trex-img"></div>
+					<button type="button" class="trex-btn">T-REX</button>
+				</div>
+
+				<div class="selector-btn">
+					<div class="simg bird-img"></div>
+					<button type="button" class="bird-btn">BIRD</button>
+				</div>
+
+				<div class="selector-btn">
+					<div class="simg halloween-img"></div>
+					<button type="button" class="halloween-btn">HALLOWEEN</button>
+				</div>
+		</div>
+	</div>
+
+	<div class="game-box displayNone">
+		<div class="bgm-toggle" id="bgmToggle">BGM ON</div>
+		<div class="score">SCORE : <span id="score">0</span></div>
+		<div class="game-over-container displayNone">
+			<span class="game-over grows">GAME OVER</span>
+			<span class="game-over-sub">Space to Restart</span>
+		</div>
+		<canvas id="playGame"></canvas>
+	</div>
+
+	<div class="displayNone">
+		<img src="./img/t-rex/egg.png">
+		<img src="./img/t-rex/egg_omg.png">
+		<img src="./img/t-rex/egg_down.png">
+		<img src="./img/t-rex/hlw_down.png">
+		<img src="./img/t-rex/hlw_omg.png">
+		<img src="./img/t-rex/hlw.png">
+		<img src="./img/t-rex/ground.png">
+	</div>
+</body>
+</html>
